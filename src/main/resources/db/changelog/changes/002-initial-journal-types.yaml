@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-initial-journal-types
+      author: engineeringdigest
+      changes:
+        - insert:
+            tableName: journal_type
+            schemaName: ${schemaName}
+            columns:
+              - column:
+                  name: name
+                  value: "Personal"
+        - insert:
+            tableName: journal_type
+            schemaName: ${schemaName}
+            columns:
+              - column:
+                  name: name
+                  value: "Work"
+        - insert:
+            tableName: journal_type
+            schemaName: ${schemaName}
+            columns:
+              - column:
+                  name: name
+                  value: "Study"
+      rollback:
+        - delete:
+            tableName: journal_type
+            schemaName: ${schemaName}
+            where: name in ('Personal', 'Work', 'Study')

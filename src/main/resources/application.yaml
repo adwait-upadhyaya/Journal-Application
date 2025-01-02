@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: prod
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    drop-first: false
+    clear-checksums: true
+    database-change-log-table: DATABASECHANGELOG
+    database-change-log-lock-table: DATABASECHANGELOGLOCK
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+admin:
+  username: admin
+  password: admin123
+
+user:
+  username: user
+  password: user123
+
+weather:
+  api:
+    url: http://api.weatherstack.com/current
+    key: 976113409c703c09535603004b6ab2a1
+
+logging:
+  level:
+    net.engineeringdigest.journalApp.controller: INFO
+    org.springframework: INFO
