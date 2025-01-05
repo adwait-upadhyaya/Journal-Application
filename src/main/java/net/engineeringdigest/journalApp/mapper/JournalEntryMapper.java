@@ -11,7 +11,7 @@ public interface JournalEntryMapper {
     @Mapping(target = "journalType", source = "journalType")
     JournalEntryDTO toDTO(JournalEntry entry);
 
-    @Mapping(target = "typeName", source = "journalType.typeName")
+    @Mapping(target = "typeName", source = "journalType.name")
     JournalEntryFlatDTO toFlatDTO(JournalEntry entry);
 
     List<JournalEntryDTO> toDTOList(List<JournalEntry> entries);

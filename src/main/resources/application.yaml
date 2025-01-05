@@ -1,9 +1,9 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   liquibase:
     enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.yaml
+    change-log: classpath:db/changelog/db.changelog-master.xml
     drop-first: false
     clear-checksums: true
     database-change-log-table: DATABASECHANGELOG
@@ -30,3 +30,7 @@ logging:
   level:
     net.engineeringdigest.journalApp.controller: INFO
     org.springframework: INFO
+
+jwt:
+  secret: bhogatesyau
+  expiry: 300000
